@@ -14,7 +14,7 @@ from torch.utils.data import Dataset, DataLoader
 plt.rcParams["font.family"] = ["Microsoft YaHei", "SimHei"]
 
 
-df = pd.read_csv(r'E:\shiyan\ShipMotion_Classify\9-Still-NYN-20221212-1051-one-hot-30bins.csv')
+df = pd.read_csv(r'E:\shiyan\ShipMotion_Classify\9-Still-NYN-20221212-1051-one-hot-30bins.csv')    #替换成本地训练数据集
 plot_cols = df.filter(regex='^phi_').columns.tolist()
 if 'phi' not in plot_cols:
     plot_cols.insert(0, 'phi')  # 将'phi'添加到列名列表的开头
@@ -346,7 +346,8 @@ from Models import CNN_LSTM_Classify,TCN_LSTM_Classify
 #训练
 device = torch.device("cuda")
 use_model =TCN_LSTM_Classify.TCN_LSTM_Classify(pred_len=OUT_STEPS,num_classes=30)
-# compile_and_fit(use_model.to(device), multi_window)
+#如果不进行训练，只进行预测隐藏下面这行代码
+compile_and_fit(use_model.to(device), multi_window)   
 
 
 
@@ -362,6 +363,7 @@ print('预测模型：',use_model_name,
 use_model.eval()
 multi_window.plot(use_model)
 test_evaluate(use_model.to(device),multi_window)
+
 
 
 
