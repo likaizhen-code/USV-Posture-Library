@@ -50,8 +50,8 @@ def apply_smoothing(df, label_col='label', num_bins=100, sigma=1.0):
 
     return pd.concat([df.reset_index(drop=True), smoothed_df], axis=1)
 
-df_smooth = apply_smoothing(df, label_col='label', num_bins=100, sigma=0.3)
-df_smooth.to_csv(f'E:/shiyan/ShipMotion_Classify/{dataset}.csv', index=False)
+# df_smooth = apply_smoothing(df, label_col='label', num_bins=100, sigma=0.3)
+# df_smooth.to_csv(f'E:/shiyan/ShipMotion_Classify/{dataset}.csv', index=False)
 
 
 #%% 独热编码
@@ -82,18 +82,8 @@ df_onehot.to_csv(f'E:/shiyan/ShipMotion_Classify/{dataset}-one-hot-30bins.csv', 
 
 
 
-#%% 划分数据集
-df = pd.read_csv(rf'E:\shiyan\ShipMotion_Classify\{dataset}\{dataset}.csv')
 
-n = len(df)
-i1 = int(n * 0.6)
-i2 = int(n * 0.8)
-train_df =df.iloc[:i1]
-val_df = df.iloc[i1:i2]
-test_df = df[i2:]
-train_df.to_csv(fr'E:\shiyan\ShipMotion_Classify\{dataset}\train_data.csv', index=True)
-val_df.to_csv(fr'E:\shiyan\ShipMotion_Classify\{dataset}\val_data.csv', index=True)
-test_df.to_csv(fr'E:\shiyan\ShipMotion_Classify\{dataset}\test_data.csv', index=True)
+
 
 
 
