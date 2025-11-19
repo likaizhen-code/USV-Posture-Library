@@ -2,7 +2,14 @@
 It contians code used for USV posture-predicting
 
 #使用步骤
+（最新）25.11.11
+运行目录Classification------roll predict classify(25.11.11).py文件
 
+
+
+
+
+25.11.1
 1.下载整个项目文件并安装依赖:
   pip install -r requirments.txt	
 	
