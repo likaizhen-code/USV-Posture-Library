@@ -10,6 +10,7 @@ It contians code used for USV posture-predicting
 
 
 25.11.1
+
 1.下载整个项目文件并安装依赖:
   pip install -r requirments.txt	
 	
