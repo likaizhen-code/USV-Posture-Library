@@ -5,7 +5,7 @@ It contians code used for USV posture-predicting
 
 （最新）25.11.11
 
-运行目录Classification------roll predict classify(25.11.11).py文件
+直接运行目录Classification------roll predict classify(25.11.11).py文件
 
 
 
