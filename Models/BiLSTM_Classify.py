@@ -78,4 +78,5 @@ class BiLSTM_Classify(Model):
         # --- D. 返回处理 ---
         conf = F.softmax(conf_logits, dim=-1) if return_softmax else F.log_softmax(conf_logits, dim=-1)
 
+
         return torch.cat([value, conf], dim=-1)
